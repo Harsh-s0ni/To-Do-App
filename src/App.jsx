@@ -30,17 +30,17 @@ const App = () => {
           <h1 className="text-center text-5xl text-white mt-5">To Do App</h1>
         </div>
         <div className="p-5 mt-5">
-          <form className="bg-slate-800 p-4 flex gap-10 items-center justify-center rounded-lg ">
-            <label className="text-3xl flex gap-5 -ml-40 max-[1000px]:-ml-0 max-[1000px]:text-xl">
+          <form className="bg-slate-800 p-4 flex gap-10 items-center justify-center rounded-lg max-[1000px]:flex-col max-[1000px]:gap-5">
+            <label className="text-3xl flex gap-5 max-[1000px]:text-xl max-[1000px]:w-full max-[1000px]:justify-between">
               Task
               <input
                 type="text"
-                className="rounded text-black max-[1000px]:w-36"
+                className="flex rounded text-black max-[1000px]:w-36"
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
               />
             </label>
-            <label className="text-3xl flex gap-5 max-[1000px]:text-xl">
+            <label className="text-3xl flex gap-5 max-[1000px]:text-xl max-[1000px]:w-full max-[1000px]:justify-between">
               Description
               <input
                 type="text"
@@ -65,8 +65,10 @@ const App = () => {
                   <div key={index} className="">
                     <div className="flex gap-10 p-6 items-center justify-center bg-slate-900 rounded-xl">
                       <div className="flex justify-between w-2/3 items-center">
-                        <h1 className="text-3xl">{item.task}</h1>
-                        <h1 className="text-xl w-2/3 text-end">
+                        <h1 className="text-3xl flex max-[1000px]:text-lg max-[1000px]:w-1/2 break-words max-[1000px]:flex-col">
+                          {item.task}
+                        </h1>
+                        <h1 className="text-xl w-2/3 text-end flex max-[1000px]:text-base max-[1000px]:w-1/3 break-words max-[1000px]:flex-col">
                           {item.description}
                         </h1>
                       </div>
